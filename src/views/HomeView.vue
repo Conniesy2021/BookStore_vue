@@ -5,13 +5,12 @@
 <template>
   <div class="home">
     <section class="here is-medium is-dark mb-6">
-      <div class="hero-body has-text-centered">
-        <p class="title mb-6">
-          Welcome to the Book Store
-        </p>
-        <p class="subtitle">
-          Home of the best books available.
-        </p>
+      <div class="bg hero-body has-text-centered">
+        <div class="bg-grey">
+          <p class="title mb-6">
+            welcome to the book store
+          </p>
+        </div>
       </div>
     </section>
 
@@ -21,7 +20,7 @@
                 <div class="books" >
 
                   <article class="book-card" v-for="book in allBooks">
-                    <img :src="require('@/assets/homepageBooks.jpg')" class="book-img">
+                    <img :src='book.img' class="book-img" alt={{book.name}}>
                     <div class="book-details">
                       <div>Name: <span class="book-name">{{book.name}}</span></div>
                       <div>Author: <span class="book-author">{{book.author || 'Anonymous'}}</span></div>
