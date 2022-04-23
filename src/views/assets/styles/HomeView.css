@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+.book-card{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 1.2rem 1.6rem;
+    margin: 1.2rem;
+    position: relative;
+    width: 700px;
+}
+
+.book-img{
+    width: 18rem;
+}
+.book-details > div{
+    font-size: 0.8rem;
+}
+.book-details > div > span{
+    font-size: 1.2rem;
+}
+.book-price>strong{
+    font-size: 1.2rem;
+}
+
+.books{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+}
+.book-desc{
+    font-size: 1rem;
+    color: #fff;
+    border: 1px solid #66d292;
+    background: #277949;
+    padding: 8px 10px;
+    border-radius:50px;
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.book-card:hover .book-desc{
+    opacity: 1;
+    bottom: 70px;
+}
