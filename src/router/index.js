@@ -37,7 +37,7 @@ const routes = [
     } ,
 
     {
-        path:'/details/:bookId',
+        path:'/details/:id',
         name: 'Details',
         component: BookDetail
     }
