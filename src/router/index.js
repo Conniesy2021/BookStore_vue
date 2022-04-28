@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import CartView from '../views/CartView'
 import Register from '../components/Register'
 import LoginView from "@/views/LoginView";
+import BookDetail from "@/components/BookDetail";
 
 const routes = [
     {
@@ -34,6 +35,12 @@ const routes = [
         name: 'Login',
         component: LoginView
     } ,
+
+    {
+        path:'/details/:bookId',
+        name: 'Details',
+        component: BookDetail
+    }
 ]
 
 const router = createRouter({
