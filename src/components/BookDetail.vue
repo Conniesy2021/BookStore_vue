@@ -1,9 +1,12 @@
 <template>
-  <div class="hello">
-    <p class="title mb-6">Name: {{name}}</p>
-    <p class="title mb-6">ID: {{ id }}</p>
-    <p class="title mb-6">Price: ${{ price }}</p>
-    <p class="title mb-5">Description: {{description}}</p>
+  <img :src='this.img' class="book-img" alt={{name}}>
+
+  <div class="book-details">
+    <div>Name: <span class="book-name">{{ name }}</span></div>
+    <div>Price: <span class="book-price">$<strong>{{ price }}</strong></span></div>
+    <div>Genre: <span class="book-price"><strong>{{  }}</strong></span></div>
+    <div>Summary: <span class="book-name">{{description}}</span> </div>
+
 
 
   </div>
@@ -22,6 +25,7 @@ export default {
     this.name = this.$route.params.name;
     this.price = this.$route.params.price;
     this.description = this.$route.params.description;
+    this.img = this.$route.params.img;
 
   },
 
