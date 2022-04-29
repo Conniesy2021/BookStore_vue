@@ -1,6 +1,6 @@
 import storage from '@react-native-firebase/storage'; // 1
 
-uploadImageToStorage(path, imageName) {
+uploadImageToStorage(path, imageName); {
     let reference = storage().ref(imageName);         // 2
     let task = reference.putFile(path);               // 3
 
