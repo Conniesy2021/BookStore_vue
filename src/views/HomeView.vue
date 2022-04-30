@@ -25,8 +25,8 @@
             <div class="book-details">
               <div>Name: <span class="book-name">{{ book.name }}</span></div>
               <div>Author: <span class="book-author">{{ book.author || 'Anonymous' }}</span></div>
-              <div>Price: <span class="book-price">$<strong>{{ book.price }}</strong></span></div>
-              <div>Genre: <span class="book-price"><strong>{{ book.Genre }}</strong></span></div>
+              <div>Price: <span class="book-price">${{ book.price }}></span></div>
+              <div>Genre: <span class="book-price">{{ book.Genre }}</span></div>
 
               <div>
                 <button v-on:click="addToCart(book)" class="is-primary button is-small">Add to cart</button>&nbsp;
