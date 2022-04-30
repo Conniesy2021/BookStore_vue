@@ -4,7 +4,7 @@
   <div class="book-details">
     <div>Name: <span class="book-name">{{ name }}</span></div>
     <div>Price: <span class="book-price">$<strong>{{ price }}</strong></span></div>
-    <div>Genre: <span class="book-price"><strong>{{  }}</strong></span></div>
+    <div>Genre: <span class="book-price"><strong>{{ genre }}</strong></span></div>
     <div>Summary: <span class="book-name">{{description}}</span> </div>
 
 
@@ -26,6 +26,7 @@ export default {
     this.price = this.$route.params.price;
     this.description = this.$route.params.description;
     this.img = this.$route.params.img;
+    this.genre = this.$route.params.genre;
 
   },
 
