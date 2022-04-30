@@ -15,6 +15,8 @@
       <div class="navbar-end">
         <router-link to="/science" class="navbar-item">Science</router-link>
         <router-link to="/history" class="navbar-item">History</router-link>
+                <router-link to="/history" class="navbar-item">History</router-link>
+
 
         <div class="navbar-item">
           <div class="buttons">
