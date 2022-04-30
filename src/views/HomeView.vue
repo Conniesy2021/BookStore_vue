@@ -21,13 +21,13 @@
         <div class="books">
 
           <article class="book-card" v-for="book in allBooks">
-            <img :src='book.img' class="book-img" alt={{book.name}}>
             <div class="book-details">
+              <img :src='book.img' class="book-img" alt={{book.name}}>
+
               <div>Name: <span class="book-name">{{ book.name }}</span></div>
               <div>Author: <span class="book-author">{{ book.author || 'Anonymous' }}</span></div>
               <div>Price: <span class="book-price">${{ book.price }}</span></div>
               <div>Genre: <span class="book-price">{{ book.Genre }}</span></div>
-
               <div>
                 <button v-on:click="addToCart(book)" class="is-primary button is-small">Add to cart</button>&nbsp;
                 <router-link
