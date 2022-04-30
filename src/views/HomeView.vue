@@ -13,29 +13,9 @@
         </div>
       </div>
     </section>
+  </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <div class="container-fluid">
-            <div class="row align-items-center justify-content-center">
-              <div class="col col-12 col-sm-10 col-md-10">
-                <div class="books" >
-
-                  <article class="book-card" v-for="book in allBooks">
-                    <img :src='book.img' class="book-img" alt={{book.name}}>
-                    <div class="book-details">
-                      <div>Name: <span class="book-name">{{book.name}}</span></div>
-                      <div>Author: <span class="book-author">{{book.author || 'Anonymous'}}</span></div>
-                      <div>Price: <span class="book-price">$<strong>{{book.price}}</strong></span></div>
-                      <div><button v-on:click="addToCart(book)" class="is-primary button is-small">Add to cart</button></div>
-                    </div>
-
-                    <div class="book-desc">
-                      {{book.description.substring(0,30) + "..." }}
-                    </div>
-                  </article>
-=======
-    <div class="container-fluid">
+  <div class="container-fluid">
       <div class="row align-items-center justify-content-center">
         <div class="col col-12 col-sm-10 col-md-10">
           <div class="books">
@@ -51,71 +31,13 @@
                   <router-link :to="{ name: 'Details', params: { id: book.id , name: book.name, description: book.description, price: book.price}}"><strong>
                     <button class="is-primary button is-small">View Details</button>
                   </strong></router-link>
-=======
-            <div class="container-fluid">
-              <div class="row align-items-center justify-content-center">
-                <div class="col col-12 col-sm-10 col-md-10">
-                  <div class="books">
-
-                    <article class="book-card" v-for="book in allBooks">
-                      <img :src='book.img' class="book-img" alt={{book.name}}>
-                      <div class="book-details">
-                        <div>Name: <span class="book-name">{{ book.name }}</span></div>
-                        <div>Author: <span class="book-author">{{ book.author || 'Anonymous' }}</span></div>
-                        <div>Price: <span class="book-price">$<strong>{{ book.price }}</strong></span></div>
-                        <div>Genre: <span class="book-desc">$<strong>{{ book.classification }}</strong></span></div>
-
-                        <div>
-                          <button v-on:click="addToCart(book)" class="is-primary button is-small">Add to cart</button>&nbsp;
-                          <router-link
-                              :to="{ name: 'Details', params: { id: book.id , name: book.name, description: book.description, price: book.price, img: book.img}}">
-                            <strong>
-                              <button class="is-primary button is-small">View Details</button>
-                            </strong></router-link>
-                        </div>
-
-
-                      </div>
-
-                      <div class="book-desc">
-                        {{ book.description.substring(0, 30) + "..." }}
-                      </div>
-                    </article>
-
-                  </div>
->>>>>>> main
                 </div>
-
               </div>
-<<<<<<< HEAD
->>>>>>> main
-
-              <div class="book-desc">
-                {{ book.description.substring(0, 30) + "..." }}
-=======
-            </div>
-
-            <div class="columns">
-              <div class="is-one-fifth column" v-for="book in latestBooks"
-                   v-bind:key="book.id">
-                <div class="box">
-                  <figure class="image mb-4">
-                    <img :src="book.get_cover_art">
-                  </figure>
-                  <div class="columns is-centered">
-                    <h3 class="is-size-4">{{ book.name }}</h3>
-                  </div>
-                  <div class="is-centered columns">
-                    <button v-on:click="addToCart(book)" class="is-primary button is-small">Add to cart
-                    </button>
-
-
-                  </div>
-                </div>
->>>>>>> main
-              </div>
-            </div>
+            </article>
           </div>
+        </div>
+      </div>
+  </div>
 </template>
 <script>
 
