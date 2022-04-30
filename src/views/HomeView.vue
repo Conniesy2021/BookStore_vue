@@ -28,6 +28,8 @@
               <div>Author: <span class="book-author">{{ book.author || 'Anonymous' }}</span></div>
               <div>Price: <span class="book-price">${{ book.price }}</span></div>
               <div>Genre: <span class="book-price">{{ book.Genre }}</span></div>
+              <button v-on:click="filterAllBooks()" class="is-primary button is-small">Test</button>&nbsp;
+
               <div>
                 <button v-on:click="addToCart(book)" class="is-primary button is-small">Add to cart</button>&nbsp;
                 <router-link
@@ -71,6 +73,17 @@ export default {
   },
 
   methods: {
+
+    filterAllBooks() {
+      for(let i = 0; i < this.allBooks.length; i++)
+      {
+        if(this.allBooks[i].Genre == 'History')
+        {
+          console.log(this.allBooks[i].name + "Is a history book")
+        }
+      }
+
+},
     getLatestBooks() {
       axios
           .get('/api/v1/latest-books')
