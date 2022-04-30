@@ -1,5 +1,5 @@
 <template>
-  <img :src='this.img' class="book-img" alt={{name}}>
+  <img :src='this.img' class="book-img" alt={{}}>
 
   <div class="book-details">
     <div>Name: <span class="book-name">{{ name }}</span></div>

@@ -28,7 +28,7 @@
                 <div>Price: <span class="book-price">$<strong>{{ book.price }}</strong></span></div>
                 <div>
                   <button v-on:click="addToCart(book)" class="is-primary button is-small">Add to cart</button>&nbsp;
-                  <router-link :to="{ name: 'Details', params: { id: book.id , name: book.name, description: book.description, price: book.price}}"><strong>
+                  <router-link :to="{ name: 'Details', params: { id: book.id , name: book.name, description: book.description, price: book.price, img: book.img}}"><strong>
                     <button class="is-primary button is-small">View Details</button>
                   </strong></router-link>
                 </div>
