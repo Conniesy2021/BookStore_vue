@@ -25,7 +25,7 @@
             <div class="book-details">
               <div>Name: <span class="book-name">{{ book.name }}</span></div>
               <div>Author: <span class="book-author">{{ book.author || 'Anonymous' }}</span></div>
-              <div>Price: <span class="book-price">${{ book.price }}></span></div>
+              <div>Price: <span class="book-price">${{ book.price }}</span></div>
               <div>Genre: <span class="book-price">{{ book.Genre }}</span></div>
 
               <div>
