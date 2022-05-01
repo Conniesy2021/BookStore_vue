@@ -23,6 +23,8 @@
 
           <article class="genre-card" v-for="genre in allGenres">
             <div> <span class="title mb-0">{{ genre }}</span></div>
+            <button class="is-primary button is-small">View Books</button>&nbsp;
+
 
           </article>
         </div>
