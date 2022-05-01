@@ -55,7 +55,7 @@ import {
 } from 'firebase/firestore'
 
 export default {
-  name: 'scienceBooks',
+  name: 'novelBooks',
   data() {
     return {
       latestBooks: [],

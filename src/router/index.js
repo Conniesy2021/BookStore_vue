@@ -8,6 +8,7 @@ import scienceBooks from "@/components/scienceBooks";
 import historyBooks from "@/components/historyBooks";
 import artBooks from "@/components/artBooks";
 import novelBooks from "@/components/novelBooks";
+import viewAllGenres from "@/components/viewAllGenres";
 
 const routes = [
     {
@@ -68,7 +69,13 @@ const routes = [
         path: '/novel',
         name: 'novel',
         component: novelBooks
-    }
+    },
+
+    {
+        path: '/allGenres',
+        name: 'allGenres',
+        component: viewAllGenres
+    },
 ]
 
 const router = createRouter({

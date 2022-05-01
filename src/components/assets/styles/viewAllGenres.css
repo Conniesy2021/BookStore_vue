@@ -1,0 +1,14 @@
+.genre-card {
+    display: block;
+    gap: 20px;
+    padding: 1.2rem 1.6rem;
+    margin: 1.2rem;
+    width: 300px;
+    transition: transform 0.2s ease-out, border 1s ease-out;
+
+}
+
+.genre-card:hover{
+    transform: scale(1.1);
+    border: 1px solid #e0dede;
+}
