@@ -6,6 +6,8 @@ import LoginView from "@/views/LoginView";
 import BookDetail from "@/components/BookDetail";
 import scienceBooks from "@/components/scienceBooks";
 import historyBooks from "@/components/historyBooks";
+import artBooks from "@/components/artBooks";
+import novelBooks from "@/components/novelBooks";
 
 const routes = [
     {
@@ -54,6 +56,18 @@ const routes = [
         path: '/history',
         name: 'history',
         component: historyBooks
+    },
+
+    {
+        path: '/art',
+        name: 'art',
+        component: artBooks
+    },
+
+    {
+        path: '/novel',
+        name: 'novel',
+        component: novelBooks
     }
 ]
 

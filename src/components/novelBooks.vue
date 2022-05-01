@@ -105,7 +105,7 @@ export default {
 
       for(var i = 0; i < this.allBooks.length; i++)
       {
-        if(this.allBooks[i].Genre == 'History')
+        if(this.allBooks[i].Genre == 'Novel')
         {
           console.log(this.allBooks[i].name);
           this.filteredBooks.push(this.allBooks[i]);

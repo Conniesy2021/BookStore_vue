@@ -16,8 +16,8 @@
         <div class="navbar-end">
           <router-link to="/science" class="navbar-item">Science</router-link>
           <router-link to="/history" class="navbar-item">History</router-link>
-          <router-link to="/history" class="navbar-item">Art</router-link>
-          <router-link to="/history" class="navbar-item">Novel</router-link>
+          <router-link to="/art" class="navbar-item">Art</router-link>
+          <router-link to="/novel" class="navbar-item">Novel</router-link>
           <router-link to="/history" class="navbar-item">View All Genres</router-link>
 
 
