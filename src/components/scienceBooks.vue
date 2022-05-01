@@ -1,14 +1,14 @@
 <style>
-@import './assets/styles/HomeView.css';
+@import "./assets/styles/scienceBooks.css";
 </style>
 
 <template>
-  <div class="home">
+
+   <div class="scienceBooks">
     <section class="here is-medium is-dark mb-6">
-      <div class="bg hero-body has-text-centered">
-        <div class="bg-grey">
+      <div class="sg">
+        <div class="sg-grey">
           <p class="title mb-6">
-            welcome to the book store
           </p>
         </div>
       </div>
@@ -20,7 +20,7 @@
       <div class="col col-12 col-sm-10 col-md-10">
         <div class="books">
 
-          <article class="book-card" v-for="book in allBooks">
+          <article class="book-card" v-for="book in filteredBooks">
             <div class="book-details">
               <img :src='book.img' class="book-img" alt={{book.name}}>
 
@@ -28,7 +28,6 @@
               <div>Author: <span class="book-author">{{ book.author || 'Anonymous' }}</span></div>
               <div>Price: <span class="book-price">${{ book.price }}</span></div>
               <div>Genre: <span class="book-price">{{ book.Genre }}</span></div>
-              <button v-on:click="filterAllBooks()" class="is-primary button is-small">Test</button>&nbsp;
 
               <div>
                 <button v-on:click="addToCart(book)" class="is-primary button is-small">Add to cart</button>&nbsp;
@@ -45,6 +44,7 @@
     </div>
   </div>
 </template>
+
 <script>
 
 import axios from 'axios'
@@ -55,9 +55,10 @@ import {
 } from 'firebase/firestore'
 
 export default {
-  name: 'HomeView',
+  name: 'scienceBooks',
   data() {
     return {
+      latestBooks: [],
       cartBooks: {},
       allBooks: [],
       filteredBooks: []
@@ -67,24 +68,11 @@ export default {
   components: {},
 
   mounted() {
-    this.cartBooks = this.$store.state.books
-    this.getAllBooks()
-    this.filterAllBooks()
+        this.cartBooks = this.$store.state.books
+        this.getAllBooks()
   },
 
   methods: {
-
-    async filterAllBooks() {
-      for(let i = 0; i < this.allBooks.length; i++)
-      {
-        if(this.allBooks[i].Genre == 'History')
-        {
-          console.log(this.allBooks[i].name + "Is a history book")
-          this.filteredBooks.push()
-        }
-      }
-
-},
 
     addToCart(book) {
       if (this.cartBooks.hasOwnProperty(book.id)) {
@@ -102,6 +90,7 @@ export default {
     },
 
 
+
     async getAllBooks() {
       const booksCol = collection(db, 'books')
 
@@ -110,10 +99,10 @@ export default {
       this.allBooks = snapshot.docs.map(doc => {
         return {
           ...doc.data(),
-          id: doc.id,
-
+          id: doc.id
         }
       })
+
       for(var i = 0; i < 5; i++)
       {
         if(this.allBooks[i].Genre == 'Science')
@@ -124,8 +113,8 @@ export default {
 
       }
 
+    },
 
-    }
 
   },
 }

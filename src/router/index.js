@@ -4,6 +4,8 @@ import CartView from '../views/CartView'
 import Register from '../components/Register'
 import LoginView from "@/views/LoginView";
 import BookDetail from "@/components/BookDetail";
+import scienceBooks from "@/components/scienceBooks";
+import historyBooks from "@/components/historyBooks";
 
 const routes = [
     {
@@ -40,6 +42,18 @@ const routes = [
         path:'/details/:id',
         name: 'Details',
         component: BookDetail
+    },
+
+    {
+        path: '/science',
+        name: 'science',
+        component: scienceBooks
+    },
+
+    {
+        path: '/history',
+        name: 'history',
+        component: historyBooks
     }
 ]
 
