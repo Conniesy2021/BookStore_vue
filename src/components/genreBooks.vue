@@ -1,14 +1,11 @@
-<style>
-@import './assets/styles/HomeView.css';
-</style>
-
 <template>
+
   <div class="home">
     <section class="here is-medium is-dark mb-6">
       <div class="bg hero-body has-text-centered">
         <div class="bg-grey">
           <p class="title mb-6">
-            welcome to the book store
+            {{genre}}
           </p>
         </div>
       </div>
@@ -20,7 +17,7 @@
       <div class="col col-12 col-sm-10 col-md-10">
         <div class="books">
 
-          <article class="book-card" v-for="book in allBooks">
+          <article class="book-card" v-for="book in filteredBooks">
             <div class="book-details">
               <img :src='book.img' class="book-img" alt={{book.name}}>
 
@@ -43,9 +40,11 @@
       </div>
     </div>
   </div>
-</template>
-<script>
 
+</template>
+
+<script>
+import router from '../router'
 import axios from 'axios'
 import db from '../firebase/firebase-connection'
 import {
@@ -54,69 +53,49 @@ import {
 } from 'firebase/firestore'
 
 export default {
-  name: 'HomeView',
+  name: 'BookDetail',
   data() {
     return {
-      cartBooks: {},
-      allBooks: [],
-      filteredBooks: []
-    }
+      allBooks:[],
+      filteredBooks:[],
+
+
+
+      }
   },
 
   components: {},
-
   mounted() {
-    this.cartBooks = this.$store.state.books
     this.getAllBooks()
   },
 
+  created() {
+    this.genre = this.$route.params.thisGenre;
+
+  },
+
+  getBook() {
+
+  },
   methods: {
-
-
-
-    addToCart(book) {
-      if (this.cartBooks.hasOwnProperty(book.id)) {
-        this.cartBooks[book.id].count++
-      } else {
-        this.cartBooks[book.id] = {
-          'book': book,
-          'count': 1
-        }
-      }
-      this.$store.state.books = this.cartBooks
-      console.log(this.$store.state.books)
-      alert("added successfully")
-
-    },
-
-
     async getAllBooks() {
       const booksCol = collection(db, 'books')
-
       const snapshot = await getDocs(booksCol)
-
       this.allBooks = snapshot.docs.map(doc => {
         return {
           ...doc.data(),
           id: doc.id,
-
         }
       })
       for(var i = 0; i < 5; i++)
       {
-        if(this.allBooks[i].Genre == 'Science')
+        if(this.allBooks[i].Genre == this.$route.params.thisGenre)
         {
-          console.log(this.allBooks[i].name);
           this.filteredBooks.push(this.allBooks[i]);
         }
-
       }
-
-
     }
-
   },
 }
 </script>
-
 

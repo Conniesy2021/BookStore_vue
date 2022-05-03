@@ -1,13 +1,12 @@
 <style>
-@import "./assets/styles/scienceBooks.css";
 </style>
 
 <template>
 
    <div class="scienceBooks">
     <section class="here is-medium is-dark mb-6">
-      <div class="sg">
-        <div class="sg-grey">
+      <div class="bg">
+        <div class="bg-grey">
           <p class="title mb-6">
           </p>
         </div>

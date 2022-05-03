@@ -9,6 +9,7 @@ import historyBooks from "@/components/historyBooks";
 import artBooks from "@/components/artBooks";
 import novelBooks from "@/components/novelBooks";
 import viewAllGenres from "@/components/viewAllGenres";
+import genreBooks from "@/components/genreBooks";
 
 const routes = [
     {
@@ -23,6 +24,13 @@ const routes = [
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    },
+
+    {
+        path: '/all',
+        name:  'allBooks',
+        component: genreBooks
+
     },
     {
         path: '/cart',
