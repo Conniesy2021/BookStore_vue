@@ -87,7 +87,7 @@ export default {
           id: doc.id,
         }
       })
-      for(var i = 0; i < 5; i++)
+      for(var i = 0; i < this.allBooks.length; i++)
       {
         if(this.allBooks[i].Genre == this.$route.params.thisGenre)
         {
