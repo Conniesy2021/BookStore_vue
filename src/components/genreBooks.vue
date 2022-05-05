@@ -5,7 +5,7 @@
       <div class="bg hero-body has-text-centered">
         <div class="bg-grey">
           <p class="title mb-6">
-            {{genre}}
+            {{ genre }}
           </p>
         </div>
       </div>
@@ -28,11 +28,12 @@
 
               <div>
                 <button v-on:click="addToCart(book)" class="is-primary button is-small">Add to cart</button>&nbsp;
-                <router-link
+                <keep-alive><router-link
                     :to="{ name: 'Details', params: { id: book.id , name: book.name, description: book.description, price: book.price, img: book.img, genre: book.Genre}}">
                   <strong>
                     <button class="is-primary button is-small">View Details</button>
-                  </strong></router-link>
+                  </strong></router-link></keep-alive>
+
               </div>
             </div>
           </article>
@@ -44,7 +45,7 @@
 </template>
 
 <script>
-import router from '../router'
+
 import axios from 'axios'
 import db from '../firebase/firebase-connection'
 import {
@@ -53,49 +54,74 @@ import {
 } from 'firebase/firestore'
 
 export default {
-  name: 'BookDetail',
   data() {
     return {
-      allBooks:[],
-      filteredBooks:[],
+      cartBooks: {},
+      allBooks: [],
+      filteredBooks: [],
+      genre: this.genre,
 
 
-
-      }
-  },
-
-  components: {},
-  mounted() {
-    this.getAllBooks()
+    }
   },
 
   created() {
-    this.genre = this.$route.params.thisGenre;
+    this.genre = this.$route.params.id;
+
+
 
   },
 
-  getBook() {
+  components: {},
 
+  mounted() {
+    this.cartBooks = this.$store.state.books
+    this.getAllBooks()
   },
+
   methods: {
+
+
+    addToCart(book) {
+      if (this.cartBooks.hasOwnProperty(book.id)) {
+        this.cartBooks[book.id].count++
+      } else {
+        this.cartBooks[book.id] = {
+          'book': book,
+          'count': 1
+        }
+      }
+      this.$store.state.books = this.cartBooks
+      console.log(this.$store.state.books)
+      alert("added successfully")
+
+    },
+
+
     async getAllBooks() {
       const booksCol = collection(db, 'books')
+
       const snapshot = await getDocs(booksCol)
+
       this.allBooks = snapshot.docs.map(doc => {
         return {
           ...doc.data(),
           id: doc.id,
+
         }
       })
-      for(var i = 0; i < this.allBooks.length; i++)
-      {
-        if(this.allBooks[i].Genre == this.$route.params.thisGenre)
-        {
+
+      for (var i = 0; i < this.allBooks.length; i++) {
+        if (this.allBooks[i].Genre == this.genre) {
           this.filteredBooks.push(this.allBooks[i]);
+
         }
+
       }
+
+
     }
+
   },
 }
 </script>
-

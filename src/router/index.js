@@ -27,9 +27,10 @@ const routes = [
     },
 
     {
-        path: '/all',
+        path: '/all/:id',
         name:  'allBooks',
-        component: genreBooks
+        component: genreBooks,
+        props: true
 
     },
     {
@@ -52,7 +53,8 @@ const routes = [
     {
         path:'/details/:id',
         name: 'Details',
-        component: BookDetail
+        component: BookDetail,
+        props: true
     },
 
     {

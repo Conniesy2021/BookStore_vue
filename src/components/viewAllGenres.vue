@@ -22,9 +22,9 @@
         <div class="genres">
 
           <article class="genre-card" v-for="genre in allGenres">
-            <div> <span class="title mb-0">{{ genre }}</span></div>
+            <div style="width: 1000px;"> <span class="title mb-6">{{ genre }}</span></div>
             <router-link
-                    :to="{ name: 'allBooks', params: {thisGenre: genre}}">
+                    :to="{ name: 'allBooks', params: {id: genre }}">
                   <strong>
                     <button class="is-primary button is-small">View Books</button>
                   </strong></router-link>
@@ -45,7 +45,7 @@ import {
 } from 'firebase/firestore'
 
 export default {
-  name: 'allGenres',
+  name: 'viewAllGenres',
   data() {
     return {
       allBooks: [],

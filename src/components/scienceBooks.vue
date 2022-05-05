@@ -7,7 +7,7 @@
     <section class="here is-medium is-dark mb-6">
       <div class="bg">
         <div class="bg-grey">
-          <p class="title mb-6">
+          <p class="title mb-6">Science
           </p>
         </div>
       </div>
